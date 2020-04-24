@@ -1,12 +1,17 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "patterns": ["Hi there", "Is anyone there?", "Hey", "Hi", "Hello", "Good day"],
          "responses": ["Good day, sir", "Greetings, sir"],
          "context": [""]
         },
+        {"tag": "wellbeing",
+         "patterns": ["How are you", "How are we", "How you doing", "Hi", "Hello", "Good day"],
+         "responses": ["Never better, sir", "What are we up to today?"],
+         "context": [""]
+        },
         {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Seeya", "Peace"],
-         "responses": ["See you again", "See you soon", "I'll be waiting"],
+         "patterns": ["Bye", "See you later", "Goodbye", "See ya", "Peace"],
+         "responses": ["Always a pleasure, sir", "See you again", "I'll be waiting"],
          "context": [""]
         },
         {"tag": "thanks",
@@ -21,52 +26,37 @@
         },
         {"tag": "options",
          "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
+         "responses": ["I'm considered by many to be a musical genius"],
          "context": [""]
         },
-        {"tag": "adverse_drug",
-         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
-         "responses": ["Navigating to Adverse drug reaction module"],
-         "context": [""]
+        {"tag": "song_search",
+         "patterns": ["Can you do a song look up for me", "Can you look up a song", "song look up"],
+         "responses": ["What song would you like me to search, sir"],
+         "context": ["search_song_by_name"]
         },
-        {"tag": "blood_pressure",
-         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
-         "responses": ["Navigating to Blood Pressure module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure_search",
-         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
-         "responses": ["Please provide Patient ID", "Patient ID?"],
-         "context": ["search_blood_pressure_by_patient_id"]
-        },
-        {"tag": "search_blood_pressure_by_patient_id",
+        {"tag": "search_song_by_name",
          "patterns": [],
-         "responses": ["Loading Blood pressure result for Patient"],
+         "responses": ["Getting song data..."],
          "context": [""]
         },
-        {"tag": "pharmacy_search",
-         "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy" ],
-         "responses": ["Please provide pharmacy name"],
-         "context": ["search_pharmacy_by_name"]
+        {"tag": "artist_search",
+         "patterns": ["Can you do an artist look up for me", "Can you look up an artist", "artist look up"],
+         "responses": ["Which artist would you like me to search, sir"],
+         "context": ["search_artist_by_name"]
         },
-        {"tag": "search_pharmacy_by_name",
+        {"tag": "search_artist_by_name",
          "patterns": [],
-         "responses": ["Loading pharmacy details"],
+         "responses": ["Loading artist information..."],
          "context": [""]
         },
-        {"tag": "hospital_search",
-         "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
-         "responses": ["Please provide hospital name or location"],
-         "context": ["search_hospital_by_params"]
+        {"tag": "lyric_search",
+         "patterns": ["Can you look up some lyrics for me", "I need you to look up some lyrics for me", "lyric search"],
+         "responses": ["Alright sir, give me whatever lyrics you can think of"],
+         "context": ["search_song_by_lyrics"]
         },
-        {"tag": "search_hospital_by_params",
+        {"tag": "search_song_by_lyrics",
          "patterns": [],
-         "responses": ["Please provide hospital type"],
-         "context": ["search_hospital_by_type"]
-        },
-        {"tag": "search_hospital_by_type",
-         "patterns": [],
-         "responses": ["Loading hospital details"],
+         "responses": ["Calculating possible songs..."],
          "context": [""]
         }
    ]
