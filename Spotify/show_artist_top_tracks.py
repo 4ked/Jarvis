@@ -12,5 +12,9 @@ else:
 sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 response = sp.artist_top_tracks(urn)
 
-for track in response['tracks']:
-    print(track['name'])
+def artistTopTracks():
+    topTracks =[]
+    for track in response['tracks']:
+        topTracks.append(track['name'])
+
+    return "Top Tracks: \n - " + "\n - ".join(topTracks)
