@@ -1,8 +1,7 @@
 import nltk
 from nltk.stem import WordNetLemmatizer
 
-from Spotify import show_artist_top_tracks
-from Spotify.show_artist_top_tracks import artistTopTracks
+from Spotify.search_artist import artistTopTracks
 
 lemmatizer = WordNetLemmatizer()
 import pickle
@@ -64,7 +63,7 @@ def getResponse(ints, intents_json):
     for i in list_of_intents:
         if (i['tag'] == tag):
             # Spotify commands
-            if tag == "search_artist_by_name":
+            if tag == "artist_search":
                 result = random.choice(i['responses']) + "\n" + artistTopTracks()
             else:
                 result = random.choice(i['responses'])
@@ -79,7 +78,6 @@ def chatbot_response(msg):
 
 
 # Creating GUI with tkinter
-import tkinter
 from tkinter import *
 
 
@@ -93,7 +91,7 @@ def send():
         ChatLog.config(foreground="#442265", font=("Verdana", 12))
 
         res = chatbot_response(msg)
-        ChatLog.insert(END, "Bot: " + res + '\n\n')
+        ChatLog.insert(END, "Jarvis: " + res + '\n\n')
 
         ChatLog.config(state=DISABLED)
         ChatLog.yview(END)
