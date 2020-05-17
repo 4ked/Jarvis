@@ -1,7 +1,8 @@
 import nltk
 from nltk.stem import WordNetLemmatizer
 
-from Spotify.search_artist import artistTopTracks
+from Spotify import search_artist
+import os
 
 lemmatizer = WordNetLemmatizer()
 import pickle
@@ -64,14 +65,15 @@ def getResponse(ints, intents_json):
         if (i['tag'] == tag):
             # Spotify commands
             if tag == "artist_search":
-                result = random.choice(i['responses']) + "\n" + artistTopTracks()
+                artist = input("Which artist would you like me to look up, sir?")
+                result = random.choice(i['responses']) + "\n" + os.system('python3 ' + search_artist + artist)
             else:
                 result = random.choice(i['responses'])
             break
     return result
 
 
-def chatbot_response(msg):
+def chatbot_response(msg): 
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
     return res

@@ -41,7 +41,7 @@
         },
         {"tag": "artist_search",
          "patterns": ["Can you do an artist look up for me", "Can you look up an artist", "artist look up"],
-         "responses": ["Which artist would you like me to search, sir"],
+         "responses": ["Of course, sir"],
          "context": ["search_artist_by_name"]
         },
         {"tag": "search_artist_by_name",
